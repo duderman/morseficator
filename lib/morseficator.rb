@@ -4,5 +4,6 @@ require 'morseficator/version'
 
 module Morseficator
   class Error < StandardError; end
-  # Your code goes here...
+
+  autoload :Morse, 'morseficator/morse.rb'
 end
