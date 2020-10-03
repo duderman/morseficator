@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'bundler/setup'
+require 'clamp'
+require 'morseficator'
+
+RED = '\033[0;31m'
+NC = '\033[0m'
+
+Clamp do
+  parameter '[TEXT]', 'text to hide from an enemy', attribute_name: :text
+  option ['-f', '--file'], 'FILE', 'use a file as an input', attribute_name: :file
+
+  def execute
+    Morseficator.run(text: text, file: file)
+  rescue Morseficator::InputError => e
+    signal_usage_error(e.message)
+  rescue Morseficator::Error => e
+    signal_error("\e[31m#{e.message}\e[0m")
+  end
+end
