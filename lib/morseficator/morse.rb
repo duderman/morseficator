@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-# Converts a single letter to a matching morse code
 module Morseficator
+  # Converts a single letter to a matching morse code
   module Morse
     LETTERS = {
       'A' => '.-',

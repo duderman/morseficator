@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module Morseficator
+  # Represents a single letter of the word
   class Letter
     def initialize(letter)
       @letter = letter
@@ -19,8 +20,8 @@ module Morseficator
       @letter
     end
 
-    def ==(letter2)
-      to_s == letter2.to_s
+    def ==(other)
+      to_s == other.to_s
     end
 
     private
