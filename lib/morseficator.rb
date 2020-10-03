@@ -6,7 +6,10 @@ require 'morseficator/version'
 module Morseficator
   class Error < StandardError; end
 
-  autoload :Morse, 'morseficator/morse.rb'
-  autoload :Letter, 'morseficator/letter.rb'
+  autoload :Encryptor, 'morseficator/encryptor.rb'
+  autoload :LetterEncoder, 'morseficator/letter_encoder.rb'
   autoload :WordEncoder, 'morseficator/word_encoder.rb'
+  autoload :LineEncoder, 'morseficator/line_encoder.rb'
+  autoload :Encoder, 'morseficator/encoder.rb'
+  autoload :StringInput, 'morseficator/string_input.rb'
 end

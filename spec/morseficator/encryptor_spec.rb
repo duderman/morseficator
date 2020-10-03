@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-RSpec.describe Morseficator::Morse do
-  describe '.convert' do
-    subject { described_class.convert(letter) }
+RSpec.describe Morseficator::Encryptor do
+  describe '.encrypt' do
+    subject { described_class.encrypt(letter) }
 
     let(:letter) { 'A' }
 
-    it 'converts a letter to a morse code' do
-      expect(subject).to eq('.-')
+    it 'encrypts a letter to a morse code' do
+      expect(subject).to eq('1a')
     end
 
     context 'when letter is empty' do

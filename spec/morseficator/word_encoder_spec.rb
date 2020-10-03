@@ -6,7 +6,7 @@ RSpec.describe Morseficator::WordEncoder do
   let(:word) { 'AB' }
 
   it 'returns encoded letters joined by a separator' do
-    expect(subject).to eq('.-|-...')
+    expect(subject).to eq('1a|a3')
   end
 
   context 'when word is empty' do

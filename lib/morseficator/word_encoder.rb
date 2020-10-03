@@ -14,13 +14,13 @@ module Morseficator
     end
 
     def call
-      letters.map(&:encode).join(LETTER_SEPARATOR)
+      letters.map { LetterEncoder.encode(_1) }.join(LETTER_SEPARATOR)
     end
 
     private
 
     def letters
-      @word.split('').map { Letter.new(_1) }
+      @word.split('')
     end
   end
 end
