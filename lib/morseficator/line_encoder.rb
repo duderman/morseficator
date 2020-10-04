@@ -7,20 +7,25 @@ module Morseficator
       new(*args).call
     end
 
-    WORD_SEPARATOR = '/'
+    SEPARATOR = '/'
+    SPLIT_BY = ' '
 
-    def initialize(line)
-      @line = line
+    def initialize(object)
+      @object = object
     end
 
     def call
-      words.map { WordEncoder.encode(_1) }.join(WORD_SEPARATOR)
+      entities.map { encoder.encode(_1) }.join(self.class::SEPARATOR)
     end
 
     private
 
-    def words
-      @line.split(' ')
+    def encoder
+      WordEncoder
+    end
+
+    def entities
+      @object.split(self.class::SPLIT_BY)
     end
   end
 end

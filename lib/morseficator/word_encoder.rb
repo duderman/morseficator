@@ -2,25 +2,18 @@
 
 module Morseficator
   # Encodes a word letter by letter joining the result using a separator
-  class WordEncoder
+  class WordEncoder < LineEncoder
     def self.encode(*args)
       new(*args).call
     end
 
-    LETTER_SEPARATOR = '|'
-
-    def initialize(word)
-      @word = word
-    end
-
-    def call
-      letters.map { LetterEncoder.encode(_1) }.join(LETTER_SEPARATOR)
-    end
+    SEPARATOR = '|'
+    SPLIT_BY = ''
 
     private
 
-    def letters
-      @word.split('')
+    def encoder
+      LetterEncoder
     end
   end
 end
