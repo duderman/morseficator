@@ -9,14 +9,10 @@ module Morseficator
 
     def initialize(input)
       @input = input
-      @result = +''
     end
 
     def call
-      @input.each_line do |line|
-        @result << LineEncoder.encode(line) << "\n"
-      end
-      @result
+      @input.map_lines { LineEncoder.encode(_1) }.join("\n")
     end
   end
 end

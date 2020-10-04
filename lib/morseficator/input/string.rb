@@ -8,8 +8,8 @@ module Morseficator
         @string = string
       end
 
-      def each_line(&block)
-        @string.split("\n").each(&block)
+      def map_lines(&block)
+        @string.split("\n").map(&block)
       end
     end
   end

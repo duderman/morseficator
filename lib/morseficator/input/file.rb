@@ -8,8 +8,8 @@ module Morseficator
         @file = file
       end
 
-      def each_line(&block)
-        file.each_line { block.call(_1.chomp) }
+      def map_lines(&block)
+        file.each_line.map { block.call(_1.chomp) }
       end
 
       private

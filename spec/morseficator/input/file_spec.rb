@@ -5,8 +5,8 @@ require 'tempfile'
 RSpec.describe Morseficator::Input::File do
   let(:input) { described_class.new(file) }
 
-  describe '.each_line' do
-    subject { input.each_line }
+  describe '.map_lines' do
+    subject { input.map_lines }
 
     let(:file) { Tempfile.new('new') }
 
@@ -17,7 +17,7 @@ RSpec.describe Morseficator::Input::File do
       end
 
       it 'calls a block with each line' do
-        expect { |b| input.each_line(&b) }.to yield_successive_args('asd', 'dsa')
+        expect { |b| input.map_lines(&b) }.to yield_successive_args('asd', 'dsa')
       end
     end
 
