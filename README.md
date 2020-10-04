@@ -1,8 +1,6 @@
 # Morseficator
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/morseficator`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+You're competing in a battle on a far away planet and you're in some trouble. You need to send a distress call to your home base for reinforcements, however, enemy agents are listening. Luckily your team have a secret encoding for messages. It's Morse code with further obfuscation.
 
 ## Installation
 
@@ -22,7 +20,28 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```
+Usage:
+    morseficator [OPTIONS] [TEXT]
+
+Parameters:
+    [TEXT]             text to hide from an enemy
+
+Options:
+    -f, --file FILE    use a file as an input
+    -h, --help         print help
+```
+
+Alternatively you can use `Morseficator` module directly in your code:
+
+```ruby
+irb(main):001:0> require 'morseficator'
+=> true
+irb(main):002:0> Morseficator.run(text: 'HELLO WORLD')
+=> "4|1|1a2|1a2|c/1b|c|1a1|1a2|a2"
+irb(main):003:0> Morseficator.run(file: '/path/to/file')
+=> "1a|3|a2\n1a|3|a2"
+```
 
 ## Development
 
@@ -32,5 +51,4 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/morseficator.
-
+Bug reports and pull requests are welcome on GitHub at https://github.com/duderman/morseficator.
