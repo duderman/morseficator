@@ -14,7 +14,7 @@ Clamp do
 
   def execute
     puts Morseficator.run(text: text, file: file)
-  rescue Morseficator::InputError => e
+  rescue Morseficator::Input::Error => e
     signal_usage_error(e.message)
   rescue Morseficator::Error => e
     signal_error("\e[31m#{e.message}\e[0m")

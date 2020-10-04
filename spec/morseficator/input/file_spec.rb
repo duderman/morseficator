@@ -2,7 +2,7 @@
 
 require 'tempfile'
 
-RSpec.describe Morseficator::FileInput do
+RSpec.describe Morseficator::Input::File do
   let(:input) { described_class.new(file) }
 
   describe '.each_line' do
@@ -22,7 +22,7 @@ RSpec.describe Morseficator::FileInput do
     end
 
     shared_examples 'raises an error' do |message|
-      specify { expect { subject }.to raise_error(Morseficator::InputError, message) }
+      specify { expect { subject }.to raise_error(Morseficator::Input::Error, message) }
     end
 
     context 'with missing file' do
