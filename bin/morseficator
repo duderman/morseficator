@@ -13,7 +13,7 @@ Clamp do
   option ['-f', '--file'], 'FILE', 'use a file as an input', attribute_name: :file
 
   def execute
-    Morseficator.run(text: text, file: file)
+    puts Morseficator.run(text: text, file: file)
   rescue Morseficator::InputError => e
     signal_usage_error(e.message)
   rescue Morseficator::Error => e

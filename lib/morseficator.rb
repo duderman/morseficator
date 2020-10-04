@@ -27,6 +27,6 @@ module Morseficator
               FileInput.new(file)
             end
 
-    Encoder.encode(input, $stdout)
+    Encoder.encode(input)
   end
 end

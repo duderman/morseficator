@@ -23,6 +23,6 @@ Gem::Specification.new do |spec|
   spec.executables   = 'morseficator'
   spec.require_paths = ['lib']
 
-  spec.add_runtime_dependency 'clamp', '~> 1.3'
   spec.add_runtime_dependency 'bundler'
+  spec.add_runtime_dependency 'clamp', '~> 1.3'
 end

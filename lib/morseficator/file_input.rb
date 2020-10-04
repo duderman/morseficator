@@ -8,7 +8,7 @@ module Morseficator
     end
 
     def each_line(&block)
-      file.each_line { block.call(_1.strip) }
+      file.each_line { block.call(_1.chomp) }
     end
 
     private

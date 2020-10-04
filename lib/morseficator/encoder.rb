@@ -7,16 +7,16 @@ module Morseficator
       new(*args).call
     end
 
-    def initialize(input, output)
+    def initialize(input)
       @input = input
-      @output = output
     end
 
     def call
+      result = +''
       @input.each_line do |line|
-        @output << LineEncoder.encode(line)
-        @output << "\n"
+        result << LineEncoder.encode(line) << "\n"
       end
+      result
     end
   end
 end
